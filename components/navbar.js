@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
         color: '#4fd9fb',
         fontSize: 33,
         textAlign: 'center'
-      },
-      contNav:{
+    },
+    contNav:{
        marginTop: 10
-      }
+    }
 })

@@ -11,17 +11,22 @@ export const AddTodo = ({addNewTodo}) => {
         } else {
             setEmpty( empty => empty + 1)
             if(empty >= 2) {
-                Alert.alert('You don`t entered your todo. String is empty')
+                Alert.alert('You don`t entered your todo.','String is empty')
                 setEmpty(0)
             } else return
         } 
     }
     return(
         <View style={styles.v}>
-            <TextInput value={val} onChangeText={text => setVal(text)} placeholder="Enter your to do" style={styles.inp} />
-                <TouchableHighlight style ={styles.btn}>
-                    <Button title="add new" onPress={addNew} />
-                </TouchableHighlight> 
+            <TextInput value={val} 
+                       onChangeText={text => setVal(text)} 
+                       placeholder="Enter your to do" 
+                       style={styles.inp} 
+                       autoCapitalize="sentences"
+                       autoCorrect={false}/>
+            <TouchableHighlight style ={styles.btn}>
+                <Button title="add new" onPress={addNew} />
+            </TouchableHighlight> 
         </View>
     )
 }
@@ -31,7 +36,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 30,
         width: '80%',
-        height: 60,
+        height: 55,
         fontSize: 24,
         backgroundColor: '#455663',
         color: '#D3D3D3',
@@ -39,15 +44,14 @@ const styles = StyleSheet.create({
       },
       btn: {
          height: 35,
-         width:100,
-         borderRadius: 10,     
+         width:100,    
          marginLeft :50,
          marginRight:50,
-         marginTop :22
+         marginTop :21
       },
       v: {
           alignItems: 'center',
           height: 130,
           justifyContent: 'space-between'
       }
-  });
+  })
